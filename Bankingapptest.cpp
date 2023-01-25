@@ -8,21 +8,29 @@ using std::cin;
 using std::endl;
 
 
-//bool end{};
 //Function creation
 //In all values the function can change the value of balance
 void balance_check(double &balance) {
-    cout << "Your available balance is " << balance << endl;
+    cout << "Your available balance is $" << balance << endl;
 }
 
 
 void withdraw(double &balance) {
+    double input{};
     cout << "How much money would you like to withdraw\n";
+    cin >> input;
+    balance -= input;
+    cout << "$" << input << " has been withdrawn from your account!\n";
+
 }
 
 
 void deposit(double &balance) {
+    double input{};
     cout << "How much money would you like to deposit?\n";
+    cin >> input;
+    balance += input;
+    cout << "$" << input << " has been added to your account!\n";
 }
 
 
@@ -40,7 +48,7 @@ void ending_check(bool &end) {
     }
 
     else {
-        cout << "Invalid value";
+        cout << "Invalid value\n";
     }
 }
 
@@ -60,7 +68,7 @@ int main()
 
     do {
         //User prompt 
-        cout << "What would you like to do\n" << "Type 'b' for a balance check\nType 'w' for a withdraw\nType 'd' for deposit\nOr press 'q' to quit the program ";
+        cout << "What would you like to do\n" << "Type 'b' for a balance check\nType 'w' for a withdraw\nType 'd' for deposit\nOr press 'q' to quit the program\n";
         cin >> input;
         
         //Check for upper case characters and convert them to lower case
@@ -81,6 +89,7 @@ int main()
             case 'd':
                 deposit(balance);
                 ending_check(end);
+                break;
             case 'q':
                 end = true;
                 break;
