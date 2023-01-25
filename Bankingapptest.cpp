@@ -16,7 +16,7 @@ using std::fixed;
 
 //Outputs balance
 void balance_check(double &balance) {
-    cout << "Your available balance is $" << fixed <<balance << endl;
+    cout << "Your current balance is $" << fixed <<balance << endl;
 }
 
 //Removes value from balance unless the value is more than the balance
@@ -26,7 +26,12 @@ void withdraw(double &balance) {
     cout.precision(2);
     cout << "How much money would you like to withdraw\n";
     cin >> input;
-    if (input > balance) {
+
+    if (balance == 0.0)
+        cout << "You currently don't have a balance, please deposit money if you wish to make a withdraw" << endl;
+    
+    
+    else if (input > balance) {
         difference = input - balance;
         cout << "Unable to complete transaction because the requested withdraw amount is $" << fixed << difference << " higher than your available balance\n";
         cout << "If you wish to make a withdraw please select an amount lower than $" << fixed << balance << endl;
