@@ -18,13 +18,13 @@ int main()
         
         //Check for upper case characters and convert them to lower case
         if (isupper(input))
-            tolower(input);
+            input = tolower(input);
         
 
         //Check for input
         switch (input) {
             case 'b':
-                cout << "Successful balance check";
+                cout << "Successful balance check!\n";
                 break;
             default:
                 cout << "Please insert a valid option listed above";
