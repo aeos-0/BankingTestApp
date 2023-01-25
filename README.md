@@ -1,1 +1,1 @@
-# Bankingapptest
+This was an application created in order to test my basic C++ knownledge. This tested variable declartion, creating functions, as well as pointers. You select the type of transaction you'd like to complete and can check your balance, withdraw money, or deposit it.
