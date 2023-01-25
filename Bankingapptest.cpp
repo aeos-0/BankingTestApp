@@ -6,15 +6,18 @@
 using  std::cout;
 using std::cin;
 using std::endl;
+using std::fixed;
 
 
 //Function creation
 //In all values the function can change the value of balance
+
+//Outputs balance
 void balance_check(double &balance) {
     cout << "Your available balance is $" << balance << endl;
 }
 
-
+//Removes value from balance unless the value is more than the balance
 void withdraw(double &balance) {
     double input{};
     double difference{};
@@ -35,7 +38,7 @@ void withdraw(double &balance) {
 
 }
 
-
+//Adds to the balance 
 void deposit(double &balance) {
     double input{};
     cout << "How much money would you like to deposit?\n";
@@ -45,6 +48,7 @@ void deposit(double &balance) {
 }
 
 
+//Checks if they wish to end the program
 void ending_check(bool &end) {
     char input{};
     cout << "Thank you for your transaction!\nWould you like to make another? Please type 'y' or 'n'\n";
