@@ -5,11 +5,46 @@
 #include <cctype>
 using namespace std;
 
+
+
+//Function creation
+//In all values the function can change the value of balance
+double balance_check(double &balance) {
+    cout << "Your available balance is " << balance;
+    ending_check();
+}
+
+
+void withdraw(double &balance) {
+    cout << "How much money would you like to withdraw";
+    ending_check();
+}
+
+
+void deposit(double &balance) {
+    cout << "How much money would you like to deposit?";
+    ending_check();
+}
+
+
+void ending_check() {
+    char input{};
+    cout << "Thank you for your transaction!\nWould you like to make another? Please type 'y' or 'n'";
+}
+
+
+
+
 int main()
 {
+    //Variables
     char input{};
-    bool end{ false };
+    bool end{};
     double balance{ 0 };
+
+
+
+
 
     do {
         //User prompt 
@@ -24,19 +59,25 @@ int main()
         //Check for input
         switch (input) {
             case 'b':
-                cout << "Successful balance check!\n";
+                balance_check(balance);
                 break;
             case 'w':
-                cout << "Successful balance check!\n";
+                withdraw(balance);
                 break;
             case 'd':
-                cout << "Successful balance check!\n";
+                deposit(balance);
             case 'q':
-                cout << "Successful balance check!\n";
+                cout << "Thank you for using this program!\n";
+                end = true;
+                break;
             default:
                 cout << "Please insert a valid option listed above";
                 break;
         }
 
+        
     } while (!end);
+
+
 }
+
