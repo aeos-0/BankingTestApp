@@ -9,24 +9,27 @@ using std::endl;
 using std::fixed;
 
 
+
+
 //Function creation
 //In all values the function can change the value of balance
 
 //Outputs balance
 void balance_check(double &balance) {
-    cout << "Your available balance is $" << balance << endl;
+    cout << "Your available balance is $" << fixed <<balance << endl;
 }
 
 //Removes value from balance unless the value is more than the balance
 void withdraw(double &balance) {
     double input{};
     double difference{};
+    cout.precision(2);
     cout << "How much money would you like to withdraw\n";
     cin >> input;
     if (input > balance) {
         difference = input - balance;
-        cout << "Unable to complete transaction because the requested withdraw amount is $" << difference << " higher than your available balance\n";
-        cout << "If you wish to make a withdraw please select an amount lower than $" << balance << endl;
+        cout << "Unable to complete transaction because the requested withdraw amount is $" << fixed << difference << " higher than your available balance\n";
+        cout << "If you wish to make a withdraw please select an amount lower than $" << fixed << balance << endl;
     }
     
     else {
@@ -41,10 +44,11 @@ void withdraw(double &balance) {
 //Adds to the balance 
 void deposit(double &balance) {
     double input{};
+    cout.precision(2);
     cout << "How much money would you like to deposit?\n";
     cin >> input;
     balance += input;
-    cout << "$" << input << " has been added to your account!\n";
+    cout << "$" << fixed << input << " has been added to your account!\n";
 }
 
 
