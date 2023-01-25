@@ -3,33 +3,45 @@
 
 #include <iostream>
 #include <cctype>
-using namespace std;
+using  std::cout;
+using std::cin;
+using std::endl;
 
 
-
+//bool end{};
 //Function creation
 //In all values the function can change the value of balance
-double balance_check(double &balance) {
-    cout << "Your available balance is " << balance;
-    ending_check();
+void balance_check(double &balance) {
+    cout << "Your available balance is " << balance << endl;
 }
 
 
 void withdraw(double &balance) {
-    cout << "How much money would you like to withdraw";
-    ending_check();
+    cout << "How much money would you like to withdraw\n";
 }
 
 
 void deposit(double &balance) {
-    cout << "How much money would you like to deposit?";
-    ending_check();
+    cout << "How much money would you like to deposit?\n";
 }
 
 
-void ending_check() {
+void ending_check(bool &end) {
     char input{};
-    cout << "Thank you for your transaction!\nWould you like to make another? Please type 'y' or 'n'";
+    cout << "Thank you for your transaction!\nWould you like to make another? Please type 'y' or 'n'\n";
+    cin >> input;
+    
+    if (input == 'y' || input == 'Y') {
+        end = false;
+    }
+
+    else if (input == 'n' || input == 'N') {
+        end = true;
+    }
+
+    else {
+        cout << "Invalid value";
+    }
 }
 
 
@@ -60,14 +72,16 @@ int main()
         switch (input) {
             case 'b':
                 balance_check(balance);
+                ending_check(end);
                 break;
             case 'w':
                 withdraw(balance);
+                ending_check(end);
                 break;
             case 'd':
                 deposit(balance);
+                ending_check(end);
             case 'q':
-                cout << "Thank you for using this program!\n";
                 end = true;
                 break;
             default:
@@ -78,6 +92,7 @@ int main()
         
     } while (!end);
 
+    cout << "Thank you for using this program!\n";
 
 }
 
