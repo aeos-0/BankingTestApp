@@ -26,6 +26,13 @@ int main()
             case 'b':
                 cout << "Successful balance check!\n";
                 break;
+            case 'w':
+                cout << "Successful balance check!\n";
+                break;
+            case 'd':
+                cout << "Successful balance check!\n";
+            case 'q':
+                cout << "Successful balance check!\n";
             default:
                 cout << "Please insert a valid option listed above";
                 break;
