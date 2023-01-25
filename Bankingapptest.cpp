@@ -1,13 +1,11 @@
 // Bankingapptest.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
 
 #include <iostream>
 #include <cctype>
-using  std::cout;
+using std::cout;
 using std::cin;
 using std::endl;
 using std::fixed;
-
 
 
 
@@ -78,17 +76,12 @@ void ending_check(bool &end) {
 
 
 
-
 int main()
 {
     //Variables
     char input{};
     bool end{};
     double balance{ 0 };
-
-
-
-
 
     do {
         //User prompt 
@@ -99,7 +92,6 @@ int main()
         if (isupper(input))
             input = tolower(input);
         
-
         //Check for input
         switch (input) {
             case 'b':
@@ -121,8 +113,7 @@ int main()
                 cout << "Please insert a valid option listed above";
                 break;
         }
-
-        
+    
     } while (!end);
 
     cout << "Thank you for using this program!\n";
