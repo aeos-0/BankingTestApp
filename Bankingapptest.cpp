@@ -17,10 +17,21 @@ void balance_check(double &balance) {
 
 void withdraw(double &balance) {
     double input{};
+    double difference{};
     cout << "How much money would you like to withdraw\n";
     cin >> input;
-    balance -= input;
-    cout << "$" << input << " has been withdrawn from your account!\n";
+    if (input > balance) {
+        difference = input - balance;
+        cout << "Unable to complete transaction because the requested withdraw amount is $" << difference << " higher than your available balance\n";
+        cout << "If you wish to make a withdraw please select an amount lower than $" << balance << endl;
+    }
+    
+    else {
+        balance -= input;
+        cout << "$" << input << " has been withdrawn from your account!\n";
+    }
+    
+    
 
 }
 
@@ -48,7 +59,7 @@ void ending_check(bool &end) {
     }
 
     else {
-        cout << "Invalid value\n";
+        cout << "Invalid value, please try again\n";
     }
 }
 
